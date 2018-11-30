@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "apollo-link": "^1.2.1",
-    "js-sha256": "^0.9.0"
+    "hash.js": "^1.1.7"
   },
   "peerDependencies": {
     "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0"
@@ -88,7 +88,7 @@
     {
       "name": "apollo-link-persisted-queries",
       "path": "./lib/bundle.min.js",
-      "maxSize": "5.4 kb"
+      "maxSize": "3.9 kb"
     }
   ],
   "lint-staged": {

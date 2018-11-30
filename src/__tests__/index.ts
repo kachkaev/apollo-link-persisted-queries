@@ -38,7 +38,12 @@ export const shortQuery = gql`
 
 export const queryWithUtf8Chars = gql`
   query Test($id: ID!) {
-    foo(id: $id, cyrillicChars: "привет", chineseChars: "您好") {
+    foo(
+      id: $id
+      twoByteChars: "привет"
+      threeByteChars: "您好"
+      fourByteChars: "👋🙌"
+    ) {
       bar
     }
   }
