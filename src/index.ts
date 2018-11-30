@@ -70,8 +70,9 @@ function operationIsQuery(operation: Operation) {
 
 const { hasOwnProperty } = Object.prototype;
 const hashesKeyString = '__createPersistedQueryLink_hashes';
-const hashesKey =
-  typeof Symbol === 'function' ? Symbol.for(hashesKeyString) : hashesKeyString;
+const hashesKey = typeof Symbol === 'function'
+  ? Symbol.for(hashesKeyString)
+  : hashesKeyString;
 let nextHashesChildKey = 0;
 
 export const createPersistedQueryLink = (
@@ -86,7 +87,7 @@ export const createPersistedQueryLink = (
 
   const hashesChildKey = 'forLink' + nextHashesChildKey++;
   function getQueryHash(query: DocumentNode): string {
-    if (!query || typeof query !== 'object') {
+    if (!query || typeof query !== "object") {
       // If the query is not an object, we won't be able to store its hash as
       // a property of query[hashesKey], so we let generateHash(query) decide
       // what to do with the bogus query.
@@ -101,7 +102,7 @@ export const createPersistedQueryLink = (
     const hashes = (query as any)[hashesKey];
     return hasOwnProperty.call(hashes, hashesChildKey)
       ? hashes[hashesChildKey]
-      : (hashes[hashesChildKey] = generateHash(query));
+      : hashes[hashesChildKey] = generateHash(query);
   }
 
   return new ApolloLink((operation, forward) => {
