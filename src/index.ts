@@ -7,7 +7,6 @@ import {
   ExecutionResult,
   GraphQLError,
 } from 'graphql';
-import { sha256 } from 'js-sha256';
 
 export const VERSION = 1;
 
